@@ -1,80 +1,321 @@
-/* roboto font 
-    regular
-    italic = 300
-    bold(medium) = 500
-*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-@import url('../font-awesome/style.css');
-
+@import url('./reset.css');
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0%;
+    
 }
 
 body {
- background-color: #fff;   
- font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background-color: white;
 }
 
 
-/*header logo nav */
-header {
-    height: 64px;
+
+/* main assets */
+
+section {
     width: 100%;
-    padding-left: 24px;
-    padding-right: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
-#logo {
-    display: inline-flex;
-    align-items: center;
+
+h1 {
+    font-size: 41px;
 }
 
-.dekstop {
+h2 {
+    font-size: 37px;
+}
+
+h3 {
+    font-size: 29px;
+}
+
+ul {
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+img {
     display: block;
+    width: 100%;
 }
 
-#logo #logo_text {
-    font-size: 32px;
-    font-family: 'Roboto', sans-serif;
-}
-#logo_text {
-    color: #000; 
-    font-weight: 500;
-}
+/* 
+    main container
+      - flex container
+      - left container
+      - right container
+*/
 
-#logo_text_gray{
-    color: gray;
-    font-style: 300;
-}
+header, .left_container, footer {
+    padding-left: 24px;
+    padding-right: 24px;
+} 
 
 
-ul li {
-    display: inline;
-    margin-left: 16px;
-    background-color: red;
+.left_container {
+    width: 60%;
+}
+
+.right_container {
+    /* nothing */
+}
+
+.flex_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* 
+    switch
+*/
+
+.desktop {
+    display: block;
 }
 
 .mobile {
     display: none;
-    
 }
 
-@media only screen and (max-width: 600px) {
+
+/* header */
+
+
+header {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+header .desktop nav a {
+    margin-left: 16px;
+}
+
+header .mobile {
+    width: 100%;
+}
+
+header .mobile nav {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*  banner  */
+
+#banner {
+    background-color: rgb(197, 197, 197);
+}
+
+#banner .right_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side_text {
+    min-height: auto;
+    width: 100%;
+    padding: 0 24px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: left;
+}
+
+
+
+.btn {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    background-color: gray;
+}
+
+
+
+/* information */
+
+#information .left_container .side_text {
+    padding: 0;
+}
+
+#information .right_container {
+    width: 40%;
+}
+
+
+/* side boxes */
+.side_box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.side_box:last-child {
+    background-color: beige;
+}
+
+.side_box .side_img {
+    width: 35%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+.side_box .side_img img {
+    min-width: 100%;
+}
+
+.side_box .side_box_content {
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* learning  */
+
+#learning {
+    height: auto;
+    padding-left: 72px;
+    padding-right: 72px;
+    text-align: center;
+    flex-direction: column;
+    align-items: space-around;
+}
+
+.image_grid {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* #learning .image_grid .img_box {
+    width: 30%;
+} */
+
+
+/*
+    img box
+*/
+
+.img_box {
+    padding: 20px 0px;
+}
+
+
+/* course link */
+
+.course_link {
+    width: 100%;
+    padding-top: 16px;
+    display: inline-flex;
+    justify-content: stretch;
+    align-items: space-around;
+}
+
+.course_link .btn {
+    text-align: left;
+    padding: 16px 0 24px 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* exhibit */
+
+#exhibit {
+    flex-direction: column;
+}
+
+#title_container {
+    text-align: center;
+}
+
+
+#exhibit .left_container video {
+    width: 100%;
+    display: block;
+}
+
+#exhibit .right_container {
+    width: 40%;
+}
+
+/*  footer */
+
+footer {
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid gray;
+}
+
+footer * {
+    padding-top: 16px;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+
+@media only screen and (max-width: 876px) {
+
+    .logo {
+        display: none;
+    }
+
     .desktop {
         display: none;
     }
 
     .mobile {
-        display: none;
-        width: 100%;
-        margin: 0px;
-        background-color: red;
+        display: flex;
     }
+
+    #banner {
+        padding: 0;
+    }
+
+    .left_container, .right_container, .side_img, .side_box_content  {
+        min-width: 100%;
+        padding: 0;
+    }
+    
+    #learning {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    footer p:last-child {
+        display: none;
+    }
+
 }
+
